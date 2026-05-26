@@ -3,10 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Template Studio — MB Design Creation</title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>Template Studio</title>
 <script>
-  const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.screen.width <= 768 || navigator.maxTouchPoints > 1;
-  window.location.href = isMobile ? '/mobile.html' : '/desktop.html';
+if(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)){
+  window.location.href='/mobile.html';
+}else{
+  window.location.href='/desktop.html';
+}
 </script>
 </head>
 <body></body>
