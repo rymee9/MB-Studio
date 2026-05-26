@@ -5,13 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Template Studio — MB Design Creation</title>
 <script>
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
-  if (isMobile) {
-    window.location.replace('/mb-studio-mobile.html');
+  const ua = navigator.userAgent;
+  const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+  const isSmall = window.screen.width <= 768;
+  const isTouch = navigator.maxTouchPoints > 1;
+  
+  if (isMobile || isSmall || isTouch) {
+    window.location.href = '/mb-studio-mobile.html';
   } else {
-    window.location.replace('/mb-studio-desktop.html');
+    window.location.href = '/mb-studio-desktop.html';
   }
 </script>
 </head>
-<body></body>
+<body>
+<style>body{margin:0;background:#f5f5f3;}</style>
+</body>
 </html>
